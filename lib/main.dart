@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'package:term_summary/components.dart';
 void main() => runApp(const MyApp());
 
+// Disable the default scroll glow
 class NoGlowScrollBehavior extends ScrollBehavior {
   @override
   Widget buildOverscrollIndicator(
@@ -49,7 +50,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
 
   @override
   Widget build(BuildContext context) {
-    // Clean rectangular glow around each image
+    // glow for images
     final imageShadow = BoxShadow(
       color: Colors.white24,
       blurRadius: 20,
@@ -66,17 +67,18 @@ class _PortfolioPageState extends State<PortfolioPage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
 
-                // NAV BAR
+                // ─── NAV BAR ───────────────────────────────────────
                 SafeArea(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        _NavButton('About',     () => _scrollTo(_aboutKey)),
-                        _NavButton('Experience',() => _scrollTo(_expKey)),
-                        _NavButton('Projects',  () => _scrollTo(_projKey)),
-                        _NavButton('Resume',    () => _scrollTo(_endKey)),
+                        NavButton('About',     () => _scrollTo(_aboutKey)),
+                        NavButton('Experience',() => _scrollTo(_expKey)),
+                        NavButton('Projects',  () => _scrollTo(_projKey)),
+                        NavButton('Resume',    () => _scrollTo(_endKey)),
                         const SizedBox(width: 16),
                         IconButton(
                           icon: const Icon(Icons.wb_sunny_outlined),
@@ -88,19 +90,21 @@ class _PortfolioPageState extends State<PortfolioPage> {
                   ),
                 ),
 
-                // HERO / PROFILE
+                // ─── HERO / PROFILE ────────────────────────────────
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 48),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 48),
                   child: Row(
                     children: [
-                      // Left side: text, buttons, socials
+                      // Intro + buttons + socials
                       Expanded(
                         flex: 2,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text('Hi, my name is',
-                                style: TextStyle(color: Colors.white70, fontSize: 20)),
+                                style: TextStyle(
+                                    color: Colors.white70, fontSize: 20)),
                             const SizedBox(height: 8),
                             const Text('Lo Khye He',
                                 style: TextStyle(
@@ -110,7 +114,8 @@ class _PortfolioPageState extends State<PortfolioPage> {
                             const SizedBox(height: 12),
                             const Text(
                               'Welcome to my website. Scroll down to find out more about me.',
-                              style: TextStyle(color: Colors.white54, fontSize: 16),
+                              style: TextStyle(
+                                  color: Colors.white54, fontSize: 16),
                             ),
                             const SizedBox(height: 24),
                             Row(children: [
@@ -123,52 +128,31 @@ class _PortfolioPageState extends State<PortfolioPage> {
                                 child: const Text('Check me out'),
                               ),
                               const SizedBox(width: 16),
-                              OutlinedButton(
-                                onPressed: () {},
-                                style: OutlinedButton.styleFrom(
-                                  side: const BorderSide(color: Colors.cyanAccent),
-                                  foregroundColor: Colors.cyanAccent,
-                                ),
-                                child: const Text('Reach Me'),
-                              ),
+                             EmailButton(toAddress: 'lokhyehe1014@gmail.com', label: 'Reach me')
+
                             ]),
                             const SizedBox(height: 32),
-                            // inline socials + dividers
                             Row(
                               mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: const [
-                                    FaIcon(FontAwesomeIcons.instagram, color: Colors.white, size: 28),
-                                    SizedBox(height: 4),
-                                    Text('Instagram', style: TextStyle(color: Colors.white70, fontSize: 12)),
-                                  ],
-                                ),
-                                const Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 16),
-                                  child: VerticalDivider(color: Colors.white54, thickness: 1),
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: const [
-                                    FaIcon(FontAwesomeIcons.github, color: Colors.white, size: 28),
-                                    SizedBox(height: 4),
-                                    Text('Github', style: TextStyle(color: Colors.white70, fontSize: 12)),
-                                  ],
-                                ),
-                                const Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 16),
-                                  child: VerticalDivider(color: Colors.white54, thickness: 1),
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: const [
-                                    FaIcon(FontAwesomeIcons.linkedin, color: Colors.white, size: 28),
-                                    SizedBox(height: 4),
-                                    Text('LinkedIn', style: TextStyle(color: Colors.white70, fontSize: 12)),
-                                  ],
-                                ),
+                              children: const [
+                                SocialItem(
+            icon: FontAwesomeIcons.instagram,
+            label: 'Instagram',
+            url: 'https://www.instagram.com/k.hyeho/',
+          ),
+          SizedBox(width: 16),
+          SocialItem(
+            icon: FontAwesomeIcons.github,
+            label: 'GitHub',
+            url: 'https://github.com/LoKhyeHe',
+          ),
+          SizedBox(width: 16),
+          SocialItem(
+            icon: FontAwesomeIcons.linkedin,
+            label: 'LinkedIn',
+            url: 'https://www.linkedin.com/in/khyehe/',
+          ),
+    SizedBox(width: 16),
                               ],
                             ),
                           ],
@@ -177,25 +161,19 @@ class _PortfolioPageState extends State<PortfolioPage> {
 
                       const SizedBox(width: 32),
 
-                      // Right side: profile image with glow
+                      // Profile image
                       Expanded(
                         flex: 1,
                         child: Center(
                           child: SizedBox(
                             width: 300,
                             height: 300,
-                            child: DecoratedBox(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                boxShadow: [imageShadow],
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(16),
-                                child: Image.asset(
-                                  'lib/assets/profile.png',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                            child: GlowImage(
+                              assetPath: 'lib/assets/profile.png',
+                              width: 300,
+                              height: 300,
+                              fit: BoxFit.cover,
+                              shadow: imageShadow,
                             ),
                           ),
                         ),
@@ -204,110 +182,78 @@ class _PortfolioPageState extends State<PortfolioPage> {
                   ),
                 ),
 
-                // ABOUT ME
+                // ─── ABOUT ME ───────────────────────────────────────
                 Container(key: _aboutKey),
-                const StaggeredHeader('About Me', lineBefore: false),
+                const StaggeredHeader('About Me', lineBefore: true),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // image 1/3
                       Expanded(
                         flex: 1,
-                        child: Center(
-                          child: SizedBox(
-                            height: 250,
-                            child: DecoratedBox(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                boxShadow: [imageShadow],
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(16),
-                                child: Image.asset('lib/assets/about.png', fit: BoxFit.cover),
-                              ),
-                            ),
-                          ),
+                        child: GlowImage(
+                          assetPath: 'lib/assets/about.png',
+                          width: 300,
+                          height: 225,
+                          fit: BoxFit.cover,
+                          shadow: imageShadow,
                         ),
                       ),
                       const SizedBox(width: 24),
-                      // text 2/3
                       Expanded(
                         flex: 2,
                         child: const Text(
-                          'From a young age, I have always tinkered with things. At the age of 6, I unspooled my brother’s correction tape, resulting in the loss of one of his stationery before his exam. On that day I learned two things: the pain of a cane and how gears work.\n\n'
-                          'Today, I am passionate about engineering and problem solving as an aspiring entrepreneur. I’m currently pursuing my degree at SUTD under the STEP Scholarship Programme. As well as working on a Baby Shark Fund Project.',
-                          style: TextStyle(color: Colors.white70, fontSize: 16, height: 1.5),
+                          'From a young age, I have always tinkered with things. At the age of 6, I unspooled my brother’s correction tape…\n\n'
+                          'Today, I am passionate about engineering and problem solving as an aspiring entrepreneur. I’m currently pursuing my degree in SUTD under the STEP Scholarship Programme.',
+                          style: TextStyle(
+                              color: Colors.white70,
+                              fontSize: 16,
+                              height: 1.5),
                         ),
                       ),
                     ],
                   ),
                 ),
 
-                // EXPERIENCE
+                // ─── EXPERIENCE ──────────────────────────────────────
                 Container(key: _expKey),
-                const StaggeredHeader('Experience', lineBefore: true),
+                const StaggeredHeader('Experience', lineBefore: false),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // image 1/3
                       Expanded(
                         flex: 1,
-                        child: Center(
-                          child: SizedBox(
-                            height: 250,
-                            child: DecoratedBox(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                boxShadow: [imageShadow],
-                              ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(16),
-                                child: Image.asset('lib/assets/experience.png', fit: BoxFit.cover),
-                              ),
-                            ),
-                          ),
+                        child: GlowImage(
+                          assetPath: 'lib/assets/experience.png',
+                          width: 300,
+                          height: 225,
+                          fit: BoxFit.cover,
+                          shadow: imageShadow,
                         ),
                       ),
                       const SizedBox(width: 24),
-                      // text 2/3
                       Expanded(
                         flex: 2,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: const [
-                            Text(
-                              'Assistant Engineer @ Temasek Polytechnic',
-                              style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(height: 4),
-                            Text('Part-time | Apr 2022 – Oct 2022', style: TextStyle(color: Colors.white54)),
-                            SizedBox(height: 8),
-                            Text('My tasks include:', style: TextStyle(color: Colors.white70)),
-                            Text(
-                              '• Developing the software portion of an IOT Module for students to learn the process of connecting health sensors to the cloud and dashboarding.',
-                              style: TextStyle(color: Colors.white70),
-                            ),
-                            Text(
-                              '• Provide consultation services for Final Year Project students in prototyping.',
-                              style: TextStyle(color: Colors.white70),
-                            ),
-                            SizedBox(height: 24),
-                            Text(
-                              'Robotics Intern @ Weston Robot',
-                              style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(height: 4),
-                            Text('Internship | Sep 2021 – Feb 2022', style: TextStyle(color: Colors.white54)),
-                            SizedBox(height: 8),
-                            Text('My tasks include:', style: TextStyle(color: Colors.white70)),
-                            Text(
-                              '• Developing a mobile application capable of interfacing with in-house robots for diagnostic purposes using Flutter.',
-                              style: TextStyle(color: Colors.white70),
-                            ),
+                            ExperienceSection(
+                            title: 'Assistant Engineer @ Temasek Polytechnic',
+                            subtitle: 'Part-time | Apr 2022 – Oct 2022',
+                            tasks: [
+                              'Developing the software portion of an IOT Module for students to learn the process of connecting health sensors to the cloud and dashboarding.',
+                              'Provide consultation services for Final Year Project students in prototyping.',
+                            ],),
+                            SizedBox(height: 24,),
+                            ExperienceSection(
+                            title: 'Robotics Intern @ Weston Robot',
+                            subtitle: 'Internship | Sep 2021 – Feb 2022',
+                            tasks: [
+                              'Developing a mobile application capable of interfacing with in-house robots for diagnostic purposes using Flutter.',
+                            ],),
                           ],
                         ),
                       ),
@@ -315,99 +261,42 @@ class _PortfolioPageState extends State<PortfolioPage> {
                   ),
                 ),
 
-                // PROJECTS (centered header)
+                // ─── PROJECTS ────────────────────────────────────────
                 Container(key: _projKey),
                 const SectionHeader('Projects'),
-                for (var i = 0; i < 3; i++)
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 24),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      textDirection: i.isOdd ? TextDirection.rtl : TextDirection.ltr,
-                      children: [
-                        // image 2/3
-                        Expanded(
-                          flex: 2,
-                          child: Center(
-                            child: SizedBox(
-                              height: 300,
-                              child: AspectRatio(
-                                aspectRatio: i == 1 ? 1 : 16 / 9,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(16),
-                                    boxShadow: [imageShadow],
-                                  ),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(16),
-                                    child: Image.asset(
-                                      i == 0
-                                          ? 'lib/assets/verbasense.png'
-                                          : i == 1
-                                              ? 'lib/assets/capacitor.png'
-                                              : 'lib/assets/icecream.png',
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 16),
-                        // text 1/3
-                        Expanded(
-                          flex: 1,
-                          child: SizedBox(
-                            height: 300,
-                            child: Center(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    i == 0
-                                        ? 'Verbasense'
-                                        : i == 1
-                                            ? 'DIY Capacitor'
-                                            : 'Battle of the Ice Cream Cup',
-                                    style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    i == 0
-                                        ? 'Smart backlight that helps students raise their hands'
-                                        : i == 1
-                                            ? 'Variable Capacitor Disk Style'
-                                            : 'Lifecycle analysis of different materials.',
-                                    style: const TextStyle(color: Colors.white70),
-                                  ),
-                                  if (i == 0) ...[
-                                    const SizedBox(height: 8),
-                                    const Text('Python | ESP32 | Flutter | Dart',
-                                        style: TextStyle(color: Colors.white54)),
-                                  ] else if (i == 1) ...[
-                                    const SizedBox(height: 8),
-                                    const Text('Fusion 360 | Additive Manufacturing',
-                                        style: TextStyle(color: Colors.white54)),
-                                  ],
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
 
-                // THE END (centered header)
+                const ProjectCard(
+                imagePath: 'lib/assets/verbasense.png',
+                title: 'Verbasense',
+                description: 'Smart backlight that helps students raise their hands',
+                techLine: 'Python | ESP32 | Flutter | Dart',
+                aspectRatio: 16/9,
+                reverse: false,
+              ),
+
+              const ProjectCard(
+                imagePath: 'lib/assets/capacitor.png',
+                title: 'DIY Capacitor',
+                description: 'Variable Capacitor Disk Style',
+                techLine: 'Fusion 360 | Additive Manufacturing',
+                aspectRatio: 1,   // square image
+                reverse: true,    // image on right side
+              ),
+
+              const ProjectCard(
+                imagePath: 'lib/assets/icecream.png',
+                title: 'Battle of the Ice Cream Cup',
+                description: 'Lifecycle analysis of different materials.',
+                techLine: '',     // no tech line
+                aspectRatio: 16/9,
+                reverse: false,
+              ),
+                // ─── THE END ─────────────────────────────────────────
                 Container(key: _endKey),
                 const SectionHeader('The End'),
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                   child: Text(
                     'That’s all I have done so far… but more is coming soon.',
                     style: TextStyle(color: Colors.white70),
@@ -415,64 +304,47 @@ class _PortfolioPageState extends State<PortfolioPage> {
                   ),
                 ),
 
-                // FOOTER + contact line
+                // ─── FOOTER ───────────────────────────────────────────
                 const Divider(color: Colors.white54, thickness: 1),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 24),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: const [
-                              FaIcon(FontAwesomeIcons.instagram, color: Colors.white),
-                              SizedBox(height: 4),
-                              Text('Instagram',
-                                  style: TextStyle(color: Colors.white70, fontSize: 12)),
-                            ],
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16),
-                            child: VerticalDivider(color: Colors.white54, thickness: 1),
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: const [
-                              FaIcon(FontAwesomeIcons.github, color: Colors.white),
-                              SizedBox(height: 4),
-                              Text('Github',
-                                  style: TextStyle(color: Colors.white70, fontSize: 12)),
-                            ],
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16),
-                            child: VerticalDivider(color: Colors.white54, thickness: 1),
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: const [
-                              FaIcon(FontAwesomeIcons.linkedin, color: Colors.white),
-                              SizedBox(height: 4),
-                              Text('LinkedIn',
-                                  style: TextStyle(color: Colors.white70, fontSize: 12)),
-                            ],
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 16),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24),
-                        child: Text(
-                          'Have something you want to reach out to me for? Contact me @ these socials or send me an email',
-                          style: TextStyle(color: Colors.white54),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+  padding: const EdgeInsets.symmetric(vertical: 24),
+  child: Column(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          SocialItem(
+            icon: FontAwesomeIcons.instagram,
+            label: 'Instagram',
+            url: 'https://www.instagram.com/k.hyeho/',
+          ),
+          SizedBox(width: 16),
+          SocialItem(
+            icon: FontAwesomeIcons.github,
+            label: 'GitHub',
+            url: 'https://github.com/LoKhyeHe',
+          ),
+          SizedBox(width: 16),
+          SocialItem(
+            icon: FontAwesomeIcons.linkedin,
+            label: 'LinkedIn',
+            url: 'https://www.linkedin.com/in/khyehe/',
+          ),
+        ],
+      ),
+      const SizedBox(height: 16),
+      const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24),
+        child: Text(
+          'Have something you want to reach out to me for? Contact me @ these socials or send me an email',
+          style: TextStyle(color: Colors.white54),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    ],
+  ),
+),
 
               ],
             ),
@@ -483,63 +355,14 @@ class _PortfolioPageState extends State<PortfolioPage> {
   }
 }
 
-// ─── CENTERED SECTION HEADER ────────────────────────────────
-class SectionHeader extends StatelessWidget {
-  final String title;
-  const SectionHeader(this.title, {super.key});
+// ─── Reusable Widgets ─────────────────────────────────────
 
-  @override
-  Widget build(BuildContext c) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-        child: Row(children: [
-          const Expanded(child: Divider(color: Colors.white54, thickness: 1)),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Text(
-              title,
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 32,              // ← bumped from 24
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-          const Expanded(child: Divider(color: Colors.white54, thickness: 1)),
-        ]),
-      );
-}
 
-// NAV BUTTON HELPER
-class _NavButton extends StatelessWidget {
-  final String label;
-  final VoidCallback onTap;
-  const _NavButton(this.label, this.onTap, {Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext c) =>
-      TextButton(onPressed: onTap, child: Text(label, style: const TextStyle(color: Colors.white)));
-}
 
-// SECTION HEADER WITH LINES ON ONE SIDE
-class StaggeredHeader extends StatelessWidget {
-  final String title;
-  final bool lineBefore;
-  const StaggeredHeader(this.title, {this.lineBefore = false, Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext c) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-        child: Row(
-          children: [
-            if (lineBefore) ...[
-              const Expanded(child: Divider(color: Colors.white54, thickness: 1)),
-              const SizedBox(width: 12),
-            ],
-            Text(title,
-                style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold)),
-            if (!lineBefore) ...[
-              const SizedBox(width: 12),
-              const Expanded(child: Divider(color: Colors.white54, thickness: 1)),
-            ],
-          ],
-        ),
-      );}
+/// A left-or-right aligned header with a single divider line.
+
+
+/// A single project card you can copy-paste to add new projects.
+/// A single project “card” in a 2/3-image / 1/3-text row, height=300.

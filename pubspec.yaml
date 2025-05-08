@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   animated_text_kit: ^4.2.2
   font_awesome_flutter: ^10.1.0
+  url_launcher: ^6.1.7
+
 
 dev_dependencies:
   flutter_test:
