@@ -73029,7 +73029,7 @@ O(a){var s=null
 return new A.H5(new A.WS(this,a),s,s,s,A.ax4(s,s,s,s,s,s,s,s,s,B.cX,s,s,s,s,s,new A.aS(B.cX,1,B.r,-1),s,s,s,s),s,s,!1,s,!0,s,new A.ec(this.d,B.cx,B.U,s),s)}}
 A.WR.prototype={
 $1(a){var s=this,r=null,q=s.a,p=s.b,o=s.c,n=s.d,m=t.E
-return new A.pv(B.kB,B.Bc,new A.cC(A.fa(16),B.o),new A.fG(B.ya,new A.cc(B.ld,A.je(A.b([new A.ec("Send me an email",B.x6,B.U,r),B.h8,q.a6_(p,"Subject"),B.wI,q.KU(o,"Message",5),B.h8,A.iF(A.b([A.a7p(B.P_,new A.WP(n),r),B.bE,A.alP(B.Hc,new A.WQ(q,p,o,n),A.alQ(r,r,B.cX,r,r,r,r,r,r,r,r,r,r,r,new A.cC(A.fa(8),B.o),r,r,r,r))],m),B.a4,B.iN,B.aB,r)],m),B.a4,B.bZ),r),r),r)},
+return new A.pv(B.kB,B.Bc,new A.cC(A.fa(16),B.o),new A.fG(B.ya,new A.cc(B.ld,A.je(A.b([new A.ec("Send me an email",B.x6,B.U,r),B.h8,q.a6_(p,"Subject"),B.wI,q.KU(o,"Message",5),B.h8,A.iF(A.b([A.a7p(B.P0,new A.WP(n),r),B.bE,A.alP(B.Hc,new A.WQ(q,p,o,n),A.alQ(r,r,B.cX,r,r,r,r,r,r,r,r,r,r,r,new A.cC(A.fa(8),B.o),r,r,r,r))],m),B.a4,B.iN,B.aB,r)],m),B.a4,B.bZ),r),r),r)},
 $S:447}
 A.WP.prototype={
 $0(){return A.qd(this.a,!1).dX()},
@@ -73052,7 +73052,7 @@ an(){var s=null,r=t.O
 return new A.Oo(A.In(),new A.bA(s,r),new A.bA(s,r),new A.bA(s,r),new A.bA(s,r))}}
 A.Oo.prototype={
 O(a){var s=this,r=null,q=new A.cZ(4,B.cI,B.l_,B.f,20),p=t.E
-return new A.xA(A.mB(new A.fG(B.y9,new A.IG(s.d,A.je(A.b([A.anw(new A.cc(B.cO,A.iF(A.b([new A.nz("About",new A.ad7(s),r),new A.nz("Experience",new A.ad8(s),r),new A.nz("Projects",new A.ad9(s),r),new A.nz("Resume",new A.ada(s),r),B.bE,A.am9(B.k,r,B.BU,r,new A.adb(),r,r)],p),B.a4,B.iN,B.aB,r),r),!0),new A.cc(B.Bb,A.iF(A.b([A.jl(A.je(A.b([B.P1,B.h9,B.P0,B.Ku,B.OV,B.h8,A.iF(A.b([A.alP(B.OX,new A.adc(s),A.alQ(r,r,B.cX,r,r,r,r,r,r,B.l,r,r,r,r,r,r,r,r,r)),B.bE,new A.Fb("lokhyehe1014@gmail.com","Reach me",r)],p),B.a4,B.aS,B.aB,r),B.Kv,A.iF(B.Ec,B.a4,B.aS,B.bZ,r)],p),B.bd,B.aB),2),B.Kt,A.jl(A.mB(A.lz(new A.pN("lib/assets/profile.png",300,300,B.eB,q,r),300,300),r,r),1)],p),B.a4,B.aS,B.aB,r),r),A.pm(r,B.M,r,r,s.e,r,r,r),B.KK,new A.cc(B.cO,A.iF(A.b([A.jl(new A.pN("lib/assets/about.png",300,225,B.eB,q,r),1),B.wG,A.jl(B.OW,2)],p),B.a4,B.aS,B.aB,r),r),A.pm(r,B.M,r,r,s.f,r,r,r),B.KL,new A.cc(B.cO,A.iF(A.b([A.jl(new A.pN("lib/assets/experience.png",300,225,B.eB,q,r),1),B.wG,A.jl(A.je(B.Dk,B.bd,B.aB),2)],p),B.a4,B.aS,B.aB,r),r),A.pm(r,B.M,r,r,s.r,r,r,r),B.IG,B.I5,B.I3,B.I4,A.pm(r,B.M,r,r,s.w,r,r,r),B.IF,B.He,B.f0,new A.cc(B.B1,A.je(A.b([A.iF(B.De,B.a4,B.qN,B.aB,r),B.wI,B.Hd],p),B.a4,B.bZ),r)],p),B.dJ,B.aB),r),r),r,r),r)}}
+return new A.xA(A.mB(new A.fG(B.y9,new A.IG(s.d,A.je(A.b([A.anw(new A.cc(B.cO,A.iF(A.b([new A.nz("About",new A.ad7(s),r),new A.nz("Experience",new A.ad8(s),r),new A.nz("Projects",new A.ad9(s),r),new A.nz("Resume",new A.ada(s),r),B.bE,A.am9(B.k,r,B.BU,r,new A.adb(),r,r)],p),B.a4,B.iN,B.aB,r),r),!0),new A.cc(B.Bb,A.iF(A.b([A.jl(A.je(A.b([B.P1,B.h9,B.P_,B.Ku,B.OV,B.h8,A.iF(A.b([A.alP(B.OX,new A.adc(s),A.alQ(r,r,B.cX,r,r,r,r,r,r,B.l,r,r,r,r,r,r,r,r,r)),B.bE,new A.Fb("lokhyehe1014@gmail.com","Reach me",r)],p),B.a4,B.aS,B.aB,r),B.Kv,A.iF(B.Ec,B.a4,B.aS,B.bZ,r)],p),B.bd,B.aB),2),B.Kt,A.jl(A.mB(A.lz(new A.pN("lib/assets/profile.png",300,300,B.eB,q,r),300,300),r,r),1)],p),B.a4,B.aS,B.aB,r),r),A.pm(r,B.M,r,r,s.e,r,r,r),B.KK,new A.cc(B.cO,A.iF(A.b([A.jl(new A.pN("lib/assets/about.png",300,225,B.eB,q,r),1),B.wG,A.jl(B.OW,2)],p),B.a4,B.aS,B.aB,r),r),A.pm(r,B.M,r,r,s.f,r,r,r),B.KL,new A.cc(B.cO,A.iF(A.b([A.jl(new A.pN("lib/assets/experience.png",300,225,B.eB,q,r),1),B.wG,A.jl(A.je(B.Dk,B.bd,B.aB),2)],p),B.a4,B.aS,B.aB,r),r),A.pm(r,B.M,r,r,s.r,r,r,r),B.IG,B.I5,B.I3,B.I4,A.pm(r,B.M,r,r,s.w,r,r,r),B.IF,B.He,B.f0,new A.cc(B.B1,A.je(A.b([A.iF(B.De,B.a4,B.qN,B.aB,r),B.wI,B.Hd],p),B.a4,B.bZ),r)],p),B.dJ,B.aB),r),r),r,r),r)}}
 A.ad7.prototype={
 $0(){var s=$.Z.a_$.x.h(0,this.a.e)
 s.toString
@@ -78095,9 +78095,9 @@ B.OV=new A.eY("Welcome to my website. Scroll down to find out more about me.",nu
 B.LK=new A.n(!0,B.C,null,null,null,null,16,null,null,null,null,null,1.5,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.OW=new A.eY("At the age of 6, I unspooled my brother\u2019s correction tape, resulting in the loss of one of his stationery before his exam. On that day I learned two things: the pain of a cane and how gears work.\n\nToday, I am passionate about engineering and problem solving as an aspiring entrepreneur. I\u2019m currently pursuing my degree in SUTD under the STEP Scholarship Programme.",null,B.LK,null,null,null,null,null,null)
 B.OX=new A.eY("Check me out",null,null,null,null,null,null,null,null)
-B.P_=new A.eY("Cancel",null,B.df,null,null,null,null,null,null)
 B.LG=new A.n(!0,B.k,null,null,null,null,48,B.ci,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.P0=new A.eY("Special Participant",null,B.LG,null,null,null,null,null,null)
+B.P_=new A.eY("Lo Khye He",null,B.LG,null,null,null,null,null,null)
+B.P0=new A.eY("Cancel",null,B.df,null,null,null,null,null,null)
 B.LX=new A.n(!0,B.C,null,null,null,null,20,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.P1=new A.eY("Hi, my name is",null,B.LX,null,null,null,null,null,null)
 B.RY=new A.a84(0,"system")
