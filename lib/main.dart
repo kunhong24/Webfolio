@@ -249,7 +249,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                const ProjectCard(
                imagePath: 'lib/assets/verbasense.png',
                title: 'Verbasense',
-               description: 'Smart backlight that helps students raise their hands',
+               description: 'Smart backlight that helps students raise their hands\\Awarded:\\1. Best Use of AI Award\\2. Most Technically Robust Design\\3. Baby Shark Fund Recipient',
                techLine: 'Python | ESP32 | Flutter | Dart',
                aspectRatio: 16/9,
                reverse: false,

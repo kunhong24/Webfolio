@@ -72882,7 +72882,7 @@ ao(){var s=t.O
 return new A.Og(A.Ie(),new A.bD(null,s),new A.bD(null,s),new A.bD(null,s))}}
 A.Og.prototype={
 O(a){var s=this,r=null,q=new A.cZ(8,B.cF,B.kY,B.f,40),p=t.E
-return new A.xv(A.mB(new A.fH(B.y0,new A.Iy(s.d,A.jf(A.b([A.ank(new A.c5(B.cM,A.iF(A.b([new A.q7("About",new A.acX(s),r),new A.q7("Experience",new A.acY(s),r),new A.q7("Projects",new A.acZ(s),r),B.dc,A.alZ(B.k,r,B.BL,r,new A.ad_(),r,r)],p),B.a2,B.iM,B.aA,r),r),!0),new A.c5(B.B3,A.iF(A.b([A.jm(A.jf(A.b([B.OW,B.h7,B.OV,B.Kl,B.OO,B.h6,A.iF(A.b([A.alE(B.OQ,new A.ad0(s),A.alF(r,r,B.bZ,r,r,r,r,r,r,B.l,r,r,r,r,r,r,r,r,r)),B.dc,new A.F3("","Reach me",r)],p),B.a2,B.aQ,B.aA,r),B.Km,A.iF(B.Dj,B.a2,B.aQ,B.bY,r)],p),B.bc,B.aA),2),B.Kk,A.jm(new A.pH("lib/assets/profile.png",300,300,B.ez,q,r),1)],p),B.a2,B.aQ,B.aA,r),r),A.ur(r,B.P,r,r,s.e,r,r,r),B.KD,new A.c5(B.cM,A.iF(A.b([A.jm(new A.pH("lib/assets/about.png",300,225,B.ez,q,r),1),B.wE,A.jm(B.OP,2)],p),B.a2,B.aQ,B.aA,r),r),A.ur(r,B.P,r,r,s.f,r,r,r),B.KE,new A.c5(B.cM,A.iF(A.b([A.jm(new A.pH("lib/assets/experience.png",300,225,B.ez,q,r),1),B.wE,A.jm(A.jf(B.Db,B.bc,B.aA),2)],p),B.a2,B.aQ,B.aA,r),r),A.ur(r,B.P,r,r,s.r,r,r,r),B.Ix,B.HX,B.HW,B.HV,B.Iw,B.H5,B.eZ,new A.c5(B.AT,A.jf(A.b([A.iF(B.D5,B.a2,B.qM,B.aA,r),B.wG,B.H4],p),B.a2,B.bY),r)],p),B.dI,B.aA),r),r),r,r),r)}}
+return new A.xv(A.mB(new A.fH(B.y0,new A.Iy(s.d,A.jf(A.b([A.ank(new A.c5(B.cM,A.iF(A.b([new A.q7("About",new A.acX(s),r),new A.q7("Experience",new A.acY(s),r),new A.q7("Projects",new A.acZ(s),r),B.dc,A.alZ(B.k,r,B.BL,r,new A.ad_(),r,r)],p),B.a2,B.iM,B.aA,r),r),!0),new A.c5(B.B3,A.iF(A.b([A.jm(A.jf(A.b([B.OW,B.h7,B.OV,B.Kl,B.OO,B.h6,A.iF(A.b([A.alE(B.OQ,new A.ad0(s),A.alF(r,r,B.bZ,r,r,r,r,r,r,B.l,r,r,r,r,r,r,r,r,r)),B.dc,new A.F3("","Reach me",r)],p),B.a2,B.aQ,B.aA,r),B.Km,A.iF(B.Dj,B.a2,B.aQ,B.bY,r)],p),B.bc,B.aA),2),B.Kk,A.jm(new A.pH("lib/assets/profile.png",300,300,B.ez,q,r),1)],p),B.a2,B.aQ,B.aA,r),r),A.ur(r,B.P,r,r,s.e,r,r,r),B.KD,new A.c5(B.cM,A.iF(A.b([A.jm(new A.pH("lib/assets/about.png",300,225,B.ez,q,r),1),B.wE,A.jm(B.OP,2)],p),B.a2,B.aQ,B.aA,r),r),A.ur(r,B.P,r,r,s.f,r,r,r),B.KE,new A.c5(B.cM,A.iF(A.b([A.jm(new A.pH("lib/assets/experience.png",300,225,B.ez,q,r),1),B.wE,A.jm(A.jf(B.Db,B.bc,B.aA),2)],p),B.a2,B.aQ,B.aA,r),r),A.ur(r,B.P,r,r,s.r,r,r,r),B.Ix,B.HV,B.HX,B.HW,B.Iw,B.H5,B.eZ,new A.c5(B.AT,A.jf(A.b([A.iF(B.D5,B.a2,B.qM,B.aA,r),B.wG,B.H4],p),B.a2,B.bY),r)],p),B.dI,B.aA),r),r),r,r),r)}}
 A.acX.prototype={
 $0(){var s=$.a_.a_$.x.h(0,this.a.e)
 s.toString
@@ -77328,9 +77328,9 @@ B.HR=new A.qf(4,"unknown")
 B.HS=new A.wR(null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.HT=new A.wT(null)
 B.HU=new A.wU(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.HV=new A.qj("lib/assets/icecream.png","Battle of the Ice Cream Cup","Lifecycle analysis of different materials.","",1.7777777777777777,!1,null)
-B.HW=new A.qj("lib/assets/capacitor.png","DIY Capacitor","Variable Capacitor Disk Style","Fusion 360 | Additive Manufacturing",1,!0,null)
-B.HX=new A.qj("lib/assets/verbasense.png","Verbasense","Smart backlight that helps students raise their hands","Python | ESP32 | Flutter | Dart",1.7777777777777777,!1,null)
+B.HV=new A.qj("lib/assets/verbasense.png","Verbasense","Smart backlight that helps students raise their hands\\Awarded:\\1. Best Use of AI Award\\2. Most Technically Robust Design\\3. Baby Shark Fund Recipient","Python | ESP32 | Flutter | Dart",1.7777777777777777,!1,null)
+B.HW=new A.qj("lib/assets/icecream.png","Battle of the Ice Cream Cup","Lifecycle analysis of different materials.","",1.7777777777777777,!1,null)
+B.HX=new A.qj("lib/assets/capacitor.png","DIY Capacitor","Variable Capacitor Disk Style","Fusion 360 | Additive Manufacturing",1,!0,null)
 B.HY=new A.wW(null,null,null,null,null,null)
 B.vG=new A.az(1,1)
 B.d7=new A.az(2,2)
