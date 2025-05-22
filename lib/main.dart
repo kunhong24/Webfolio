@@ -106,7 +106,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                                 style: TextStyle(
                                     color: Colors.white70, fontSize: 20)),
                             const SizedBox(height: 8),
-                            const Text('Chin Fu Jie',
+                            const Text('Chia Jamien',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 48,
