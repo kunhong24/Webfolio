@@ -106,7 +106,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                                 style: TextStyle(
                                     color: Colors.white70, fontSize: 20)),
                             const SizedBox(height: 8),
-                            const Text('Lo Khye He',
+                            const Text('Special Participant',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 48,
@@ -204,7 +204,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                       Expanded(
                         flex: 2,
                         child: const Text(
-                          'From a young age, I have always tinkered with things. At the age of 6, I unspooled my brother’s correction tape…\n\n'
+                          'At the age of 6, I unspooled my brother’s correction tape, resulting in the loss of one of his stationery before his exam. On that day I learned two things: the pain of a cane and how gears work.\n\n'
                           'Today, I am passionate about engineering and problem solving as an aspiring entrepreneur. I’m currently pursuing my degree in SUTD under the STEP Scholarship Programme.',
                           style: TextStyle(
                               color: Colors.white70,
@@ -279,7 +279,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                 title: 'DIY Capacitor',
                 description: 'Variable Capacitor Disk Style',
                 techLine: 'Fusion 360 | Additive Manufacturing',
-                aspectRatio: 1,   // square image
+                aspectRatio: 9/16,   // square image
                 reverse: true,    // image on right side
               ),
 
