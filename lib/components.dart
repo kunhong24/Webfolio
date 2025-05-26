@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:html' as html;
 
-
 /// Staggered Header
 class StaggeredHeader extends StatelessWidget {
   final String title;
@@ -160,58 +159,45 @@ class ProjectCard extends StatelessWidget {
       blurRadius: 40,
       spreadRadius: 8,
     );
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isMobile = constraints.maxWidth < 600;
+        final imageAligned = reverse ? Alignment.centerRight : Alignment.centerLeft;
 
-    // Only the image alignment toggles:
-    final imageAlignment =
-        reverse ? Alignment.centerRight : Alignment.centerLeft;
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 24),
-      child: Row(
-        textDirection: reverse ? TextDirection.rtl : TextDirection.ltr,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          // IMAGE (2/3)
-          Expanded(
-            flex: 2,
-            child: Align(
-              alignment: imageAlignment,
-              child: SizedBox(
-                height: 300,
-                child: AspectRatio(
-                  aspectRatio: aspectRatio,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      boxShadow: [imageShadow],
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(16),
-                      child: Image.asset(imagePath, fit: BoxFit.cover),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+        return Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: isMobile ? 12 : 24,
+            horizontal: isMobile ? 12 : 24,
           ),
-
-          const SizedBox(width: 16),
-
-          // TEXT (1/3) — unchanged alignment (always left)
-          Expanded(
-            flex: 1,
-            child: SizedBox(
-              height: 300,
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start, // always start
+          child: isMobile
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Align(
+                      alignment: imageAligned,
+                      child: SizedBox(
+                        width: constraints.maxWidth * 0.9,
+                        child: AspectRatio(
+                          aspectRatio: aspectRatio,
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: [imageShadow],
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(16),
+                              child: Image.asset(imagePath, fit: BoxFit.cover),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
                     Text(
                       title,
                       style: const TextStyle(
                         color: Colors.white,
-                        fontSize: 22,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -222,12 +208,57 @@ class ProjectCard extends StatelessWidget {
                       Text(techLine, style: const TextStyle(color: Colors.white54)),
                     ],
                   ],
+                )
+              : Row(
+                  textDirection: reverse ? TextDirection.rtl : TextDirection.ltr,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: Align(
+                        alignment: imageAligned,
+                        child: AspectRatio(
+                          aspectRatio: aspectRatio,
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: [imageShadow],
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(16),
+                              child: Image.asset(imagePath, fit: BoxFit.cover),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      flex: 1,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            title,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(description, style: const TextStyle(color: Colors.white70)),
+                          if (techLine.isNotEmpty) ...[
+                            const SizedBox(height: 8),
+                            Text(techLine, style: const TextStyle(color: Colors.white54)),
+                          ],
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
