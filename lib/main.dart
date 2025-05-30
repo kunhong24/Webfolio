@@ -109,7 +109,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                                 style: TextStyle(
                                     color: Colors.white70, fontSize: 20)),
                             const SizedBox(height: 8),
-                            const Text('Special Participant',
+                            const Text('Loh Kun Hong',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 48,
@@ -140,7 +140,15 @@ class _PortfolioPageState extends State<PortfolioPage> {
                                 SocialItem(
                                   icon: FontAwesomeIcons.instagram,
                                   label: 'Instagram',
-                                  url: 'https://www.instagram.com/k.hyeho/',
+                                  url: 'https://www.instagram.com/k.hyeho/',),
+                                  SocialItem(
+                                  icon: FontAwesomeIcons.github,
+                                  label: 'GitHub',
+                                  url: 'https://github.com/LoKhyeHe',),
+                                  SocialItem(
+                                    icon: FontAwesomeIcons.linkedin,
+                                    label: 'LinkedIn',
+                                    url: 'https://www.linkedin.com/in/khyehe/',
                                 ),
                                 
                               ],
@@ -163,9 +171,122 @@ class _PortfolioPageState extends State<PortfolioPage> {
                   ),
                 ),
                 // ─── ABOUT ME ─────────────────────────────────────
+                Container(key: _aboutKey),
+               const StaggeredHeader('About Me', lineBefore: true),
+               Padding(
+                 padding:
+                     const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                 child: Row(
+                   children: [
+                     Expanded(
+                       flex: 1,
+                       child: GlowImage(
+                         assetPath: 'lib/assets/about.png',
+                         width: 300,
+                         height: 225,
+                         fit: BoxFit.cover,
+                         shadow: imageShadow,
+                       ),
+                     ),
+                     const SizedBox(width: 24),
+                     Expanded(
+                       flex: 2,
+                       child: const Text(
+                         'At the age of 6, I unspooled my brother’s correction tape, resulting in the loss of one of his stationery before his exam. On that day I learned two things: the pain of a cane and how gears work.\n\n'
+                         'Today, I am passionate about engineering and problem solving as an aspiring entrepreneur. I’m currently pursuing my degree in SUTD under the STEP Scholarship Programme.',
+                         style: TextStyle(
+                             color: Colors.white70, fontSize: 16, height: 1.5),
+                       ),
+                     ),
+                   ],
+                 ),
+               ),
+
                 
                 // ─── EXPERIENCE ──────────────────────────────────────
+                Container(key: _expKey),
+               const StaggeredHeader('Experience', lineBefore: false),
+               Padding(
+                 padding:
+                     const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                 child: Row(
+                   children: [
+                     Expanded(
+                       flex: 1,
+                       child: GlowImage(
+                         assetPath: 'lib/assets/experience.png',
+                         width: 300,
+                         height: 225,
+                         fit: BoxFit.cover,
+                         shadow: imageShadow,
+                       ),
+                     ),
+                     const SizedBox(width: 24),
+                     Expanded(
+                       flex: 2,
+                       child: Column(
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: const [
+                           ExperienceSection(
+                             title: 'Assistant Engineer @ Temasek Polytechnic',
+                             subtitle: 'Part-time | Apr 2022 – Oct 2022',
+                             tasks: [
+                               'Developing the software portion of an IOT Module for students to learn the process of connecting health sensors to the cloud and dashboarding.',
+                               'Provide consultation services for Final Year Project students in prototyping.',
+                             ],
+                           ),
+                           SizedBox(
+                             height: 24,
+                           ),
+                           ExperienceSection(
+                             title: 'Robotics Intern @ Weston Robot',
+                             subtitle: 'Internship | Sep 2021 – Feb 2022',
+                             tasks: [
+                               'Developing a mobile application capable of interfacing with in-house robots for diagnostic purposes using Flutter.',
+                             ],
+                           ),
+                         ],
+                       ),
+                     ),
+                   ],
+                 ),
+               ),
+
                 // ─── PROJECTS ────────────────────────────────────────
+                Container(key: _projKey),
+               const SectionHeader('Projects'),
+
+
+               const ProjectCard(
+                 imagePath: 'lib/assets/verbasense.png',
+                 title: 'Verbasense',
+                 description:
+                     'Smart backlight that helps students raise their hands\nAwarded:\n1. Best Use of AI Award\n2. Most Technically Robust Design\n3. Baby Shark Fund Recipient',
+                 techLine: 'Python | ESP32 | Flutter | Dart',
+                 aspectRatio: 16 / 9,
+                 reverse: false,
+               ),
+
+
+               const ProjectCard(
+                 imagePath: 'lib/assets/capacitor.png',
+                 title: 'DIY Capacitor',
+                 description: 'Variable Capacitor Disk Style',
+                 techLine: 'Fusion 360 | Additive Manufacturing',
+                 aspectRatio: 16/9, // square image
+                 reverse: true, // image on right side
+               ),
+
+
+               const ProjectCard(
+                 imagePath: 'lib/assets/icecream.png',
+                 title: 'Battle of the Ice Cream Cup',
+                 description: 'Lifecycle analysis of different materials.',
+                 techLine: '', // no tech line
+                 aspectRatio: 16 / 9,
+                 reverse: false,
+               ),
+
                 
                 // ─── THE END ─────────────────────────────────────────
                 const SectionHeader('The End'),

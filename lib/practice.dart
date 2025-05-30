@@ -25,9 +25,7 @@ class AboutPage extends StatelessWidget {
 
   // just one local var for our long text
   final String aboutText = '''
-At the age of 6, I unspooled my brother’s correction tape, resulting in the loss of his stationery before his exam. On that day I learned two things: the pain of a cane and how gears work.
-
-Today, I am passionate about engineering and problem solving as an aspiring entrepreneur. I’m currently pursuing my degree in SUTD under the STEP Scholarship Programme.
+My name is kun with a u.
 ''';
 
   @override
@@ -54,7 +52,7 @@ Today, I am passionate about engineering and problem solving as an aspiring entr
                   Flexible( // flexible widget to allow resizing, limited space follow flex
                     flex: 1,
                     child: GlowImage(
-                      assetPath: 'lib/assets/about.png',
+                      assetPath: 'lib/assets/profile.png',
                       width: 300,
                       height: 225,
                       shadow: imageShadow,
