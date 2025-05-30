@@ -1,9 +1,11 @@
+//flutter run -t lib/practice.dart
+
 import 'package:flutter/material.dart';
 import 'package:term_summary/components.dart'; // StaggeredHeader & GlowImage
 
 void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget { //run app stateless widget cause your app dont change
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
       ),
-      home: const AboutPage(),
+      home: const AboutPage(), // its very first widget/child of the app
     );
   }
 }
