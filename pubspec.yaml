@@ -29,3 +29,8 @@ flutter:
     - lib/assets/verbasense.png
     - lib/assets/capacitor.png
     - lib/assets/icecream.png
+    - lib/assets/car.jpg
+    - lib/assets/CTD.png
+    - lib/assets/ML.png
+    - lib/assets/SDW.png
+    - lib/assets/projex.png

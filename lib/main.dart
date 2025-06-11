@@ -140,15 +140,15 @@ class _PortfolioPageState extends State<PortfolioPage> {
                                 SocialItem(
                                   icon: FontAwesomeIcons.instagram,
                                   label: 'Instagram',
-                                  url: 'https://www.instagram.com/k.hyeho/',),
+                                  url: 'https://www.instagram.com/',),
                                   SocialItem(
                                   icon: FontAwesomeIcons.github,
                                   label: 'GitHub',
-                                  url: 'https://github.com/LoKhyeHe',),
+                                  url: 'https://github.com/',),
                                   SocialItem(
                                     icon: FontAwesomeIcons.linkedin,
                                     label: 'LinkedIn',
-                                    url: 'https://www.linkedin.com/in/khyehe/',
+                                    url: 'https://www.linkedin.com/',
                                 ),
                                 
                               ],
@@ -181,7 +181,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                      Expanded(
                        flex: 1,
                        child: GlowImage(
-                         assetPath: 'lib/assets/about.png',
+                         assetPath: 'lib/assets/profile.png',
                          width: 300,
                          height: 225,
                          fit: BoxFit.cover,
@@ -192,8 +192,8 @@ class _PortfolioPageState extends State<PortfolioPage> {
                      Expanded(
                        flex: 2,
                        child: const Text(
-                         'At the age of 6, I unspooled my brother’s correction tape, resulting in the loss of one of his stationery before his exam. On that day I learned two things: the pain of a cane and how gears work.\n\n'
-                         'Today, I am passionate about engineering and problem solving as an aspiring entrepreneur. I’m currently pursuing my degree in SUTD under the STEP Scholarship Programme.',
+                         'I am an Aspiring Mechanical Engineer studying in the Singapore University of Technology and Design (SUTD). A multitude of projects instilled into me the spirit of proactive learning and effective communication. I approach tasks with diligence and humility, pushing for clarity on my doubts, especially when dealing with unfamiliar grounds.\n\n'
+                         'While being meticulous is my pride, details can distract me from the bigger picture, so I consciously push for an iterative, “just do it” approach. In my free time, I love to dance and exercise, keeping my body and mind active.',
                          style: TextStyle(
                              color: Colors.white70, fontSize: 16, height: 1.5),
                        ),
@@ -202,55 +202,6 @@ class _PortfolioPageState extends State<PortfolioPage> {
                  ),
                ),
 
-                
-                // ─── EXPERIENCE ──────────────────────────────────────
-                Container(key: _expKey),
-               const StaggeredHeader('Experience', lineBefore: false),
-               Padding(
-                 padding:
-                     const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                 child: Row(
-                   children: [
-                     Expanded(
-                       flex: 1,
-                       child: GlowImage(
-                         assetPath: 'lib/assets/experience.png',
-                         width: 300,
-                         height: 225,
-                         fit: BoxFit.cover,
-                         shadow: imageShadow,
-                       ),
-                     ),
-                     const SizedBox(width: 24),
-                     Expanded(
-                       flex: 2,
-                       child: Column(
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: const [
-                           ExperienceSection(
-                             title: 'Assistant Engineer @ Temasek Polytechnic',
-                             subtitle: 'Part-time | Apr 2022 – Oct 2022',
-                             tasks: [
-                               'Developing the software portion of an IOT Module for students to learn the process of connecting health sensors to the cloud and dashboarding.',
-                               'Provide consultation services for Final Year Project students in prototyping.',
-                             ],
-                           ),
-                           SizedBox(
-                             height: 24,
-                           ),
-                           ExperienceSection(
-                             title: 'Robotics Intern @ Weston Robot',
-                             subtitle: 'Internship | Sep 2021 – Feb 2022',
-                             tasks: [
-                               'Developing a mobile application capable of interfacing with in-house robots for diagnostic purposes using Flutter.',
-                             ],
-                           ),
-                         ],
-                       ),
-                     ),
-                   ],
-                 ),
-               ),
 
                 // ─── PROJECTS ────────────────────────────────────────
                 Container(key: _projKey),
@@ -259,32 +210,60 @@ class _PortfolioPageState extends State<PortfolioPage> {
 
                const ProjectCard(
                  imagePath: 'lib/assets/verbasense.png',
-                 title: 'Verbasense',
+                 title: 'Ground-Breaking',
                  description:
-                     'Smart backlight that helps students raise their hands\nAwarded:\n1. Best Use of AI Award\n2. Most Technically Robust Design\n3. Baby Shark Fund Recipient',
-                 techLine: 'Python | ESP32 | Flutter | Dart',
+                     'A comprehensive sensing solution for forest monitoring efforts.\n\nAwarded:\nPeople’s Choice Award.',
+                 techLine: 'FEA Simulations | Mathematical Modelling',
                  aspectRatio: 16 / 9,
                  reverse: false,
                ),
 
 
                const ProjectCard(
-                 imagePath: 'lib/assets/capacitor.png',
-                 title: 'DIY Capacitor',
-                 description: 'Variable Capacitor Disk Style',
-                 techLine: 'Fusion 360 | Additive Manufacturing',
+                 imagePath: 'lib/assets/projex.png',
+                 title: 'Projex',
+                 description: 'Portable projector that navigates unfamiliar indoor spaces.',
+                 techLine: 'Design Thinking | Raspberry Pi | Electronics | CLI',
                  aspectRatio: 16/9, // square image
                  reverse: true, // image on right side
                ),
 
 
                const ProjectCard(
-                 imagePath: 'lib/assets/icecream.png',
-                 title: 'Battle of the Ice Cream Cup',
-                 description: 'Lifecycle analysis of different materials.',
-                 techLine: '', // no tech line
+                 imagePath: 'lib/assets/car.jpg',
+                 title: 'Rubberband Car',
+                 description: 'Mechanical car with adjustable rubber-based suspension.',
+                 techLine: 'Fusion360 CAD | Additive Manufacturing | Laser Cutting',
                  aspectRatio: 16 / 9,
                  reverse: false,
+               ),
+
+               const ProjectCard(
+                 imagePath: 'lib/assets/SDW.png',
+                 title: 'Spatial Design World',
+                 description: 'Comprehensive sketching and modelling methods with Rhino CAD software.',
+                 techLine: 'Rhino CAD | Technical Sketching',
+                 aspectRatio: 16/9, // square image
+                 reverse: true, // image on right side
+               ),
+
+
+               const ProjectCard(
+                 imagePath: 'lib/assets/ML.png',
+                 title: 'Machine Learning Exploration',
+                 description: 'Gained exposure to common Machine Learning methods.',
+                 techLine: 'Time Series Forecasting | Inverse Design', // no tech line
+                 aspectRatio: 16 / 9,
+                 reverse: false,
+               ),
+
+               const ProjectCard(
+                 imagePath: 'lib/assets/CTD.png',
+                 title: 'Calendar and Schedule Tracker',
+                 description: 'A scheduling application coded from scratch',
+                 techLine: 'Python | Tkinter GUI',
+                 aspectRatio: 16/9, // square image
+                 reverse: true, // image on right side
                ),
 
                 
@@ -312,19 +291,19 @@ class _PortfolioPageState extends State<PortfolioPage> {
                           SocialItem(
                             icon: FontAwesomeIcons.instagram,
                             label: 'Instagram',
-                            url: 'https://www.instagram.com/k.hyeho/',
+                            url: 'https://www.instagram.com/',
                           ),
                           SizedBox(width: 16),
                           SocialItem(
                             icon: FontAwesomeIcons.github,
                             label: 'GitHub',
-                            url: 'https://github.com/LoKhyeHe',
+                            url: 'https://github.com/',
                           ),
                           SizedBox(width: 16),
                           SocialItem(
                             icon: FontAwesomeIcons.linkedin,
                             label: 'LinkedIn',
-                            url: 'https://www.linkedin.com/in/khyehe/',
+                            url: 'https://www.linkedin.com/',
                           ),
                         ],
                       ),

@@ -142,6 +142,10 @@ class ProjectCard extends StatelessWidget {
   /// If true, image goes on the right, text on the left.
   final bool reverse;
 
+  /// for image sizing
+  final double? imageWidth;
+
+
   const ProjectCard({
     required this.imagePath,
     required this.title,
@@ -149,6 +153,7 @@ class ProjectCard extends StatelessWidget {
     required this.techLine,
     required this.aspectRatio,
     required this.reverse,
+    this.imageWidth, // ← add this
     Key? key,
   }) : super(key: key);
 
@@ -177,6 +182,10 @@ class ProjectCard extends StatelessWidget {
             ),
           ),
         );
+        
+        if (imageWidth != null) {
+  imageWidget = SizedBox(width: imageWidth, child: imageWidget);
+}
 
         Widget textWidget = Column(
           mainAxisSize: MainAxisSize.min,
